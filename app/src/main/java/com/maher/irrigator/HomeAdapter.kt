@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.maher.irrigator.model.kc.KC
 import com.maher.irrigator.model.kc.KcPlant
 import com.maher.irrigator.model.l.L
@@ -17,7 +18,11 @@ import com.maher.irrigator.widget.spinner.SpinnerAdapter
 import com.maher.irrigator.widget.spinner.SpinnerTextView
 import com.maher.irrigator.widget.spinner.SpinnerTextViewBaseAdapter
 import okhttp3.OkHttpClient
+import okhttp3.ResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.text.SimpleDateFormat
@@ -66,9 +71,9 @@ class HomeAdapter(context: Context?) : EmptyBaseAdapter<L>(context) {
 
         private fun onStart() {
             when (adapterPosition) {
-                0 -> thingSpeak.setOperation(BuildConfig.WRITE_KEY_ONE, 1).execute()
-                1 -> thingSpeak.setOperation(BuildConfig.WRITE_KEY_TWO, 1).execute()
-                2 -> thingSpeak.setOperation(BuildConfig.WRITE_KEY_THIRD, 1).execute()
+                0 -> startOperation(BuildConfig.WRITE_KEY_ONE, context)
+                1 -> startOperation(BuildConfig.WRITE_KEY_ONE, context)
+                2 -> startOperation(BuildConfig.WRITE_KEY_THIRD, context)
             }
         }
 
@@ -195,5 +200,16 @@ class HomeAdapter(context: Context?) : EmptyBaseAdapter<L>(context) {
             .build()
 
         thingSpeak = retrofit.create(thingSpeakService::class.java)
+    }
+
+    fun startOperation(key: String, context: Context) {
+        thingSpeak.setOperation(key, 1).enqueue(object : Callback<ResponseBody> {
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+            }
+
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                Toast.makeText(context.applicationContext, "Operation Started", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }

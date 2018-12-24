@@ -10,6 +10,7 @@ import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
+import android.os.Handler
 import android.os.StrictMode
 import android.view.View
 import android.widget.Toast
@@ -33,6 +34,7 @@ import com.maher.irrigator.model.kc.KcPlant
 import com.maher.irrigator.model.l.LPlant
 import com.maher.irrigator.sharedTool.SavedData
 import com.maher.irrigator.widget.Constant
+import com.maher.irrigator.widget.ViewDialog
 import kotlinx.android.synthetic.main.activity_details.*
 import kotlinx.android.synthetic.main.progress_view.*
 import kotlinx.android.synthetic.main.toolbar_title.*
@@ -47,7 +49,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
-import kotlin.concurrent.schedule
 import kotlin.math.*
 
 const val DEV = "dev"
@@ -123,6 +124,8 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
 
         callLatitude.enqueue(object : Callback<Latitude> {
             override fun onFailure(call: Call<Latitude>, t: Throwable) {
+                onBackPressed()
+                Toast.makeText(applicationContext, "Latitude and Longitude not Specified", Toast.LENGTH_LONG).show()
             }
 
             override fun onResponse(call: Call<Latitude>, response: retrofit2.Response<Latitude>) {
@@ -131,26 +134,30 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
 
                     callLongitude.enqueue(object : Callback<Longitude> {
                         override fun onFailure(call: Call<Longitude>, t: Throwable) {
-
+                            onBackPressed()
+                            Toast.makeText(applicationContext, "Latitude and Longitude not Specified", Toast.LENGTH_LONG).show()
                         }
 
                         override fun onResponse(call: Call<Longitude>, response: Response<Longitude>) {
                             if (response.isSuccessful) {
                                 longitude = response.body()?.field2
+
+                                if (latitude != null && longitude != null) {
+                                    forecast(latitude?.toDouble()!!, longitude?.toDouble()!!)
+                                }
+                            } else {
+                                onBackPressed()
+                                Toast.makeText(applicationContext, "Latitude and Longitude not Specified", Toast.LENGTH_LONG).show()
                             }
                         }
                     })
 
+                }else{
+                    onBackPressed()
+                    Toast.makeText(applicationContext, "Latitude and Longitude not Specified", Toast.LENGTH_LONG).show()
                 }
             }
         })
-
-        if (latitude !=null && longitude!=null){
-            forecast(latitude?.toDouble()!!, longitude?.toDouble()!!)
-        }else{
-            onBackPressed()
-            Toast.makeText(this, "Latitude and Longitude not Specified", Toast.LENGTH_LONG).show()
-        }
     }
 
 
@@ -226,7 +233,6 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
             thingSpeak.setTime(WRITE_API_KEY, time(Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).toInt()).execute()
             thingSpeak.setTime(WRITE_API_KEY, time(Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).toInt()).execute()
             SoilMoistureSync(diffrence, soilMoisture?.field3?.toDouble(), call, Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant)
-            water_needed_value.text = Etc(Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).toString()
         }
     }
 
@@ -247,23 +253,18 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
     ) {
         if (diffrence > 0 && soilMoisture != null) {
             if (soilMoisture > 70) {
-                thingSpeak.setOperation(WRITE_API_KEY, 0)
-                thingSpeak.setOperation(WRITE_API_KEY, 0)
                 water_needed.text = "No water needed, It rains"
+                water_needed_value.text = ""
                 Toast.makeText(this, "Operation Satisfied", Toast.LENGTH_LONG).show()
             } else if (soilMoisture < 5) {
                 thingSpeak.setTime(WRITE_API_KEY, time(Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).div(10).toInt()).execute().body()
                 thingSpeak.setTime(WRITE_API_KEY, time(Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).div(10).toInt()).execute().body()
 
                 water_needed.text = "Water Needed ="
-                water_needed_value.text = (Etc(Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).div(10)).toString()
+                water_needed_value.text = (Etc(Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).div(10)).toInt().toString()
             } else {
                 water_needed.text = "Wait For Raining"
-            }
-        } else {
-            Timer().schedule(5000) {
-                var soilMoisture = call.clone().execute().body()
-                RainSoilMoistureSync(diffrence, soilMoisture?.field3?.toDouble(), call, Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant)
+                water_needed_value.text = ""
             }
         }
     }
@@ -286,20 +287,29 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
     ) {
         if (diffrence > 0 && soilMoisture != null) {
             if (soilMoisture > 70) {
-                thingSpeak.setOperation(WRITE_API_KEY, 0)
-                thingSpeak.setOperation(WRITE_API_KEY, 0)
                 water_needed.text = "No water needed, It rains"
+                water_needed_value.text = ""
                 Toast.makeText(this, "Operation Satisfied", Toast.LENGTH_LONG).show()
             } else {
                 thingSpeak.setTime(WRITE_API_KEY, time(Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).div(10).toInt()).execute().body()
                 thingSpeak.setTime(WRITE_API_KEY, time(Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).div(10).toInt()).execute().body()
                 water_needed.text = "Water Needed ="
-                water_needed_value.text = (Etc(Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).div(10)).toString()
-            }
-        } else {
-            Timer().schedule(5000) {
-                var moisture = call.clone().execute().body()
-                RainSoilMoistureSync(diffrence, moisture?.field3?.toDouble(), call, Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant)
+                water_needed_value.text = (Etc(Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).div(10)).toInt().toString()
+                Handler().postDelayed({
+                    thingSpeak.getMoisture(CHANNEL_ID, READ_API_KEY).enqueue(object : Callback<Moisture> {
+                        override fun onFailure(call: Call<Moisture>, t: Throwable) {
+                        }
+
+                        override fun onResponse(call: Call<Moisture>, response: Response<Moisture>) {
+                            if (response.isSuccessful) {
+                                if (response.body()?.field3?.toDouble() == soilMoisture) {
+                                    ViewDialog().showErrorDialog(applicationContext, "Something went wrong")
+                                }
+                            }
+                        }
+
+                    })
+                }, 60000)
             }
         }
     }
