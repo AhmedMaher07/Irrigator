@@ -39,6 +39,7 @@ import kotlinx.android.synthetic.main.activity_details.*
 import kotlinx.android.synthetic.main.progress_view.*
 import kotlinx.android.synthetic.main.toolbar_title.*
 import okhttp3.OkHttpClient
+import okhttp3.ResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit.RetrofitError
 import retrofit2.Call
@@ -253,9 +254,11 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
     ) {
         if (diffrence > 0 && soilMoisture != null) {
             if (soilMoisture > 70) {
+                stopOperation(WRITE_API_KEY)
+                stopOperation(WRITE_API_KEY)
                 water_needed.text = "No water needed, It rains"
                 water_needed_value.text = ""
-                Toast.makeText(this, "Operation Satisfied", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Operation Satisfied", Toast.LENGTH_SHORT).show()
             } else if (soilMoisture < 5) {
                 thingSpeak.setTime(WRITE_API_KEY, time(Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).div(10).toInt()).execute().body()
                 thingSpeak.setTime(WRITE_API_KEY, time(Tmax, Tmin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).div(10).toInt()).execute().body()
@@ -287,6 +290,8 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
     ) {
         if (diffrence > 0 && soilMoisture != null) {
             if (soilMoisture > 70) {
+                stopOperation(WRITE_API_KEY)
+                stopOperation(WRITE_API_KEY)
                 water_needed.text = "No water needed, It rains"
                 water_needed_value.text = ""
                 Toast.makeText(this, "Operation Satisfied", Toast.LENGTH_LONG).show()
@@ -358,7 +363,19 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
 
             thingSpeak(this.precipProbability.toDouble(), this.temperatureMax, this.temperatureMin, this.humidity.toDouble(), lPlant.date, lat, ratio, this.pressure.toDouble(), this.windSpeed.toDouble(), lPlant, kcPlant)
         }
+    }
 
+    fun stopOperation(key: String){
+        thingSpeak.setOperation(key, 0).enqueue(object : Callback<ResponseBody> {
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+            }
+
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if(response.isSuccessful){
+                    Toast.makeText(applicationContext, "Operation Stopped", Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
     }
 
     fun Tmean(Tmax: Double, Tmin: Double): Double {
