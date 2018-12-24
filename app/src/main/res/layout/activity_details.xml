@@ -93,6 +93,7 @@
                     style="@style/TextStyle.Title"
                     tools:text="summary_value"
                     android:ellipsize="end"
+                    android:ems="10"
                     app:layout_constraintTop_toTopOf="@+id/summary"
                     app:layout_constraintBottom_toBottomOf="@+id/summary"
                     app:layout_constraintEnd_toEndOf="parent"

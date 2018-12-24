@@ -27,21 +27,21 @@ import com.johnhiott.darkskyandroidlib.models.WeatherResponse
 import com.maher.irrigator.dependency.component.DaggerLocationComponent
 import com.maher.irrigator.dependency.module.ContextModule
 import com.maher.irrigator.model.Latitude
+import com.maher.irrigator.model.Longitude
 import com.maher.irrigator.model.Moisture
 import com.maher.irrigator.model.kc.KcPlant
 import com.maher.irrigator.model.l.LPlant
 import com.maher.irrigator.sharedTool.SavedData
 import com.maher.irrigator.widget.Constant
-import com.maher.irrigator.widget.ViewDialog
 import kotlinx.android.synthetic.main.activity_details.*
 import kotlinx.android.synthetic.main.progress_view.*
 import kotlinx.android.synthetic.main.toolbar_title.*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit.Callback
 import retrofit.RetrofitError
-import retrofit.client.Response
 import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.text.SimpleDateFormat
@@ -73,6 +73,9 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
     private lateinit var calendar: Calendar
     private lateinit var thingSpeak: thingSpeakService
 
+
+    private var latitude: String? = null
+    private var longitude: String? = null
 
     @SuppressLint("MissingPermission")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -118,32 +121,36 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
         val callLatitude = thingSpeak.getlatitude(CHANNEL_ID, READ_API_KEY)
         val callLongitude = thingSpeak.getLongitude(CHANNEL_ID, READ_API_KEY)
 
-        var lat =  callLatitude.execute()
+        callLatitude.enqueue(object : Callback<Latitude> {
+            override fun onFailure(call: Call<Latitude>, t: Throwable) {
+            }
 
-        if (lat.body() is Latitude) {
-            val latitude = lat.body()?.field1
-            val longitude = callLongitude.execute().body()?.field2
+            override fun onResponse(call: Call<Latitude>, response: retrofit2.Response<Latitude>) {
+                if (response.isSuccessful) {
+                    latitude = response.body()?.field1
 
-            if (latitude != null && longitude != null)
-                forecast(latitude.toDouble(), longitude.toDouble())
-            else {
-                runOnUiThread {
-                    ViewDialog().showErrorDialog(this, "Latitude and Longitude are not specified")
+                    callLongitude.enqueue(object : Callback<Longitude> {
+                        override fun onFailure(call: Call<Longitude>, t: Throwable) {
+
+                        }
+
+                        override fun onResponse(call: Call<Longitude>, response: Response<Longitude>) {
+                            if (response.isSuccessful) {
+                                longitude = response.body()?.field2
+                            }
+                        }
+                    })
+
                 }
             }
+        })
+
+        if (latitude !=null && longitude!=null){
+            forecast(latitude?.toDouble()!!, longitude?.toDouble()!!)
         }else{
-            runOnUiThread {
-                ViewDialog().showErrorDialog(this, "Latitude and Longitude are not specified")
-            }
+            onBackPressed()
+            Toast.makeText(this, "Latitude and Longitude not Specified", Toast.LENGTH_LONG).show()
         }
-//        if (locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER) != null) { // Mobile's Location
-//            forecast(
-//                locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER).latitude,
-//                locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER).longitude
-//            )
-//        } else {
-//            onLocationRequest()
-//        }
     }
 
 
@@ -184,8 +191,8 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
         request.addExcludeBlock(Request.Block.HOURLY)
         request.addExcludeBlock(Request.Block.MINUTELY)
         request.addExcludeBlock(Request.Block.CURRENTLY)
-        weather.getWeather(request, object : Callback<WeatherResponse> {
-            override fun success(weatherResponse: WeatherResponse, response: Response) {
+        weather.getWeather(request, object : retrofit.Callback<WeatherResponse> {
+            override fun success(weatherResponse: WeatherResponse, response: retrofit.client.Response?) {
                 progress.hide()
                 container.visibility = View.VISIBLE
                 setData(weatherResponse.daily, lat, lng)
@@ -223,7 +230,21 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
         }
     }
 
-    private fun RainSoilMoistureSync(diffrence: Int, soilMoisture: Double?, call: Call<Moisture>, Tmax: Double, Tmin: Double, humidity: Double, j: Int, lat: Double, ratio: Double, pressure: Double, U: Double, lPlant: LPlant, kcPlant: KcPlant) {
+    private fun RainSoilMoistureSync(
+        diffrence: Int,
+        soilMoisture: Double?,
+        call: Call<Moisture>,
+        Tmax: Double,
+        Tmin: Double,
+        humidity: Double,
+        j: Int,
+        lat: Double,
+        ratio: Double,
+        pressure: Double,
+        U: Double,
+        lPlant: LPlant,
+        kcPlant: KcPlant
+    ) {
         if (diffrence > 0 && soilMoisture != null) {
             if (soilMoisture > 70) {
                 thingSpeak.setOperation(WRITE_API_KEY, 0)
@@ -248,7 +269,21 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
     }
 
 
-    private fun SoilMoistureSync(diffrence: Int, soilMoisture: Double?, call: Call<Moisture>, Tmax: Double, Tmin: Double, humidity: Double, j: Int, lat: Double, ratio: Double, pressure: Double, U: Double, lPlant: LPlant, kcPlant: KcPlant) {
+    private fun SoilMoistureSync(
+        diffrence: Int,
+        soilMoisture: Double?,
+        call: Call<Moisture>,
+        Tmax: Double,
+        Tmin: Double,
+        humidity: Double,
+        j: Int,
+        lat: Double,
+        ratio: Double,
+        pressure: Double,
+        U: Double,
+        lPlant: LPlant,
+        kcPlant: KcPlant
+    ) {
         if (diffrence > 0 && soilMoisture != null) {
             if (soilMoisture > 70) {
                 thingSpeak.setOperation(WRITE_API_KEY, 0)
