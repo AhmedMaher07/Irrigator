@@ -146,6 +146,7 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
 //        }
     }
 
+
     private fun retrofit() {
         val client = OkHttpClient().newBuilder()
             .addInterceptor(HttpLoggingInterceptor().apply {

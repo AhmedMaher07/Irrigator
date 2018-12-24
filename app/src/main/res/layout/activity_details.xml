@@ -9,201 +9,208 @@
         android:focusable="true"
         android:background="@android:color/white">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-            android:visibility="invisible"
-            android:id="@+id/container"
+    <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"
-                android:id="@+id/imageView"/>
 
-        <TextView
-                android:id="@+id/planting_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextStyle.Title"
-                android:text="Planting Date"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/imageView"
-                android:layout_marginTop="16dp"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:visibility="invisible"
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp"
+                    android:id="@+id/imageView"/>
 
-        <TextView
-                android:id="@+id/planting_date_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextStyle.Title"
-                tools:text="Planting Date_value"
-                app:layout_constraintTop_toTopOf="@+id/planting_date"
-                app:layout_constraintBottom_toBottomOf="@+id/planting_date"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"/>
+            <TextView
+                    android:id="@+id/planting_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title"
+                    android:text="Planting Date"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    android:layout_marginTop="16dp"/>
 
-        <TextView
-                android:id="@+id/t_h_l"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextStyle.Title"
-                android:text="T (High - Low)"
-                app:layout_constraintTop_toBottomOf="@+id/planting_date"
-                android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"/>
+            <TextView
+                    android:id="@+id/planting_date_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title"
+                    tools:text="Planting Date_value"
+                    app:layout_constraintTop_toTopOf="@+id/planting_date"
+                    app:layout_constraintBottom_toBottomOf="@+id/planting_date"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp"/>
 
-        <TextView
-                android:id="@+id/t_h_l_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextStyle.Title"
-                tools:text="T (High - Low)_ value"
-                app:layout_constraintTop_toTopOf="@+id/t_h_l"
-                app:layout_constraintBottom_toBottomOf="@+id/t_h_l"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"/>
-        <TextView
-                android:id="@+id/summary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextStyle.Title"
-                android:text="Summary"
-                app:layout_constraintTop_toBottomOf="@+id/t_h_l"
-                android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"/>
+            <TextView
+                    android:id="@+id/t_h_l"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title"
+                    android:text="T (High - Low)"
+                    app:layout_constraintTop_toBottomOf="@+id/planting_date"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp"/>
 
-        <TextView
-                android:id="@+id/summary_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextStyle.Title"
-                tools:text="summary_value"
-                android:ems="8"
-                android:ellipsize="end"
-                app:layout_constraintTop_toTopOf="@+id/summary"
-                app:layout_constraintBottom_toBottomOf="@+id/summary"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"/>
-        <TextView
-                android:id="@+id/hum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextStyle.Title"
-                android:text="Hum"
-                app:layout_constraintTop_toBottomOf="@+id/summary"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"/>
+            <TextView
+                    android:id="@+id/t_h_l_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title"
+                    tools:text="T (High - Low)_ value"
+                    app:layout_constraintTop_toTopOf="@+id/t_h_l"
+                    app:layout_constraintBottom_toBottomOf="@+id/t_h_l"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp"/>
+            <TextView
+                    android:id="@+id/summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title"
+                    android:text="Summary"
+                    app:layout_constraintTop_toBottomOf="@+id/t_h_l"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp"/>
 
-        <TextView
-                android:id="@+id/hum_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextStyle.Title"
-                tools:text="Hum_value"
-                app:layout_constraintTop_toTopOf="@+id/hum"
-                app:layout_constraintBottom_toBottomOf="@+id/hum"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"/>
-        <TextView
-                android:id="@+id/pre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextStyle.Title"
-                android:text="Pressure"
-                app:layout_constraintTop_toBottomOf="@+id/hum"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"/>
+            <TextView
+                    android:id="@+id/summary_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title"
+                    tools:text="summary_value"
+                    android:ellipsize="end"
+                    app:layout_constraintTop_toTopOf="@+id/summary"
+                    app:layout_constraintBottom_toBottomOf="@+id/summary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp"/>
+            <TextView
+                    android:id="@+id/hum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title"
+                    android:text="Hum"
+                    app:layout_constraintTop_toBottomOf="@+id/summary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"/>
 
-        <TextView
-                android:id="@+id/pre_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextStyle.Title"
-                tools:text="pressure_value"
-                app:layout_constraintTop_toTopOf="@+id/pre"
-                app:layout_constraintBottom_toBottomOf="@+id/pre"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"/>
-        <TextView
-                android:id="@+id/wind_speed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextStyle.Title"
-                android:text="Wind Speed"
-                app:layout_constraintTop_toBottomOf="@+id/pre"
-                android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"/>
+            <TextView
+                    android:id="@+id/hum_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title"
+                    tools:text="Hum_value"
+                    app:layout_constraintTop_toTopOf="@+id/hum"
+                    app:layout_constraintBottom_toBottomOf="@+id/hum"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp"/>
+            <TextView
+                    android:id="@+id/pre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title"
+                    android:text="Pressure"
+                    app:layout_constraintTop_toBottomOf="@+id/hum"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"/>
 
-        <TextView
-                android:id="@+id/wind_speed_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextStyle.Title"
-                tools:text="Wind Speed Value"
-                app:layout_constraintTop_toTopOf="@+id/wind_speed"
-                app:layout_constraintBottom_toBottomOf="@+id/wind_speed"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"/>
-        <TextView
-                android:id="@+id/lat_lng"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lat - Lng"
-                style="@style/TextStyle.Title"
-                app:layout_constraintTop_toBottomOf="@+id/wind_speed"
-                android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"/>
+            <TextView
+                    android:id="@+id/pre_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title"
+                    tools:text="pressure_value"
+                    app:layout_constraintTop_toTopOf="@+id/pre"
+                    app:layout_constraintBottom_toBottomOf="@+id/pre"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp"/>
+            <TextView
+                    android:id="@+id/wind_speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title"
+                    android:text="Wind Speed"
+                    app:layout_constraintTop_toBottomOf="@+id/pre"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp"/>
 
-        <TextView
-                android:id="@+id/lat_lng_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextStyle.Title"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintTop_toTopOf="@+id/lat_lng"
-                app:layout_constraintBottom_toBottomOf="@+id/lat_lng"/>
+            <TextView
+                    android:id="@+id/wind_speed_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title"
+                    tools:text="Wind Speed Value"
+                    app:layout_constraintTop_toTopOf="@+id/wind_speed"
+                    app:layout_constraintBottom_toBottomOf="@+id/wind_speed"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp"/>
+            <TextView
+                    android:id="@+id/lat_lng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lat - Lng"
+                    style="@style/TextStyle.Title"
+                    app:layout_constraintTop_toBottomOf="@+id/wind_speed"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp"/>
 
-        <TextView
-                android:id="@+id/water_needed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextStyle.Title.Bold"
-                android:text="Water Needed = "
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintTop_toBottomOf="@+id/lat_lng"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintEnd_toStartOf="@+id/water_needed_value"
-                android:layout_marginTop="16dp"/>
-        <TextView
-                android:id="@+id/water_needed_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextStyle.Title.Bold"
-                tools:text="Water Value"
-                app:layout_constraintTop_toTopOf="@+id/water_needed"
-                app:layout_constraintBottom_toBottomOf="@+id/water_needed"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintStart_toEndOf="@+id/water_needed"
-                app:layout_constraintHorizontal_bias="0.5"/>
+            <TextView
+                    android:id="@+id/lat_lng_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintTop_toTopOf="@+id/lat_lng"
+                    app:layout_constraintBottom_toBottomOf="@+id/lat_lng"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                    android:id="@+id/water_needed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title.Bold"
+                    android:text="Water Needed = "
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintTop_toBottomOf="@+id/lat_lng"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toStartOf="@+id/water_needed_value"
+                    android:layout_marginTop="16dp"/>
+            <TextView
+                    android:id="@+id/water_needed_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title.Bold"
+                    tools:text="Water Value"
+                    app:layout_constraintTop_toTopOf="@+id/water_needed"
+                    app:layout_constraintBottom_toBottomOf="@+id/water_needed"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/water_needed"
+                    app:layout_constraintHorizontal_bias="0.5"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
 
     <include layout="@layout/progress_view"/>
 
