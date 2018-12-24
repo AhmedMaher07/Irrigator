@@ -17,8 +17,8 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 style="@style/TextStyle.Title"
                 tools:text="summary_value"
-                android:ems="10"
+                android:ems="8"
                 android:ellipsize="end"
                 app:layout_constraintTop_toTopOf="@+id/summary"
                 app:layout_constraintBottom_toBottomOf="@+id/summary"
