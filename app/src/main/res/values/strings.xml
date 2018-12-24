@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Irrigation</string>
+    <string name="count">Number of plants</string>
+    <string name="date">Planting Date</string>
+    <string name="reset">Reset</string>
+    <string name="select_a_plant">[ Select a Plant ]</string>
+    <string name="proceed">Proceed</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="rationale_location">This app needs access to your location to know where and who you are.</string>
+    <string name="flow_rate">Flow Rate</string>
+</resources>

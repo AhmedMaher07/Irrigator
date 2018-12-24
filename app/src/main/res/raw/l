@@ -1,0 +1,1375 @@
+{
+  "plants": [
+    {
+      "name": "Broccoli",
+      "init": 35,
+      "dev": 45,
+      "mid": 40,
+      "late": 15,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Cabbage",
+      "init": 40,
+      "dev": 60,
+      "mid": 50,
+      "late": 15,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Carrots (last-100day- )",
+      "init": 20,
+      "dev": 30,
+      "mid": 30,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Carrots (last-150day- )",
+      "init": 30,
+      "dev": 40,
+      "mid": 60,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Carrots (last-200day- )",
+      "init": 30,
+      "dev": 50,
+      "mid": 90,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Cauliflowe",
+      "init": 35,
+      "dev": 50,
+      "mid": 40,
+      "late": 15,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Celery (last-125day- )",
+      "init": 25,
+      "dev": 40,
+      "mid": 45,
+      "late": 15,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Celery (last-180day- )",
+      "init": 25,
+      "dev": 40,
+      "mid": 95,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Celery (last-210day- )",
+      "init": 30,
+      "dev": 55,
+      "mid": 105,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Lettuce (last-75day- )",
+      "init": 20,
+      "dev": 30,
+      "mid": 15,
+      "late": 10,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Lettuce (last-105day- )",
+      "init": 30,
+      "dev": 40,
+      "mid": 25,
+      "late": 10,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Lettuce (last-100day- )",
+      "init": 25,
+      "dev": 35,
+      "mid": 30,
+      "late": 10,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Lettuce (last-140day- )",
+      "init": 35,
+      "dev": 50,
+      "mid": 45,
+      "late": 10,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "onion dry (last-150day- )",
+      "init": 15,
+      "dev": 25,
+      "mid": 70,
+      "late": 40,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "onion dry(last-210day- )",
+      "init": 20,
+      "dev": 35,
+      "mid": 110,
+      "late": 45,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "onion green (last-70day- )",
+      "init": 25,
+      "dev": 30,
+      "mid": 10,
+      "late": 5,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "onion green (last-95day- )",
+      "init": 20,
+      "dev": 45,
+      "mid": 20,
+      "late": 10,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "onion green (last-180day- )",
+      "init": 30,
+      "dev": 55,
+      "mid": 55,
+      "late": 40,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "onion seed",
+      "init": 20,
+      "dev": 45,
+      "mid": 165,
+      "late": 45,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Spinach (last- 60/70day- )",
+      "init": 20,
+      "dev": 20,
+      "mid": 20,
+      "late": 5,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Spinach (last- 100day- )",
+      "init": 20,
+      "dev": 30,
+      "mid": 40,
+      "late": 10,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Radish (last- 35day- )",
+      "init": 5,
+      "dev": 10,
+      "mid": 15,
+      "late": 5,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Radish (last- 40day- )",
+      "init": 10,
+      "dev": 10,
+      "mid": 15,
+      "late": 5,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Egg plant (last- 40day- )",
+      "init": 30,
+      "dev": 40,
+      "mid": 40,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Egg plant (last- 130day- )",
+      "init": 30,
+      "dev": 40,
+      "mid": 40,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Sweet Peppers (bell) (last- 125day- )",
+      "init": 30,
+      "dev": 35,
+      "mid": 40,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Sweet Peppers (bell) (last- 210day- )",
+      "init": 30,
+      "dev": 40,
+      "mid": 110,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Tomato (last- 135day- )",
+      "init": 30,
+      "dev": 40,
+      "mid": 40,
+      "late": 25,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Tomato (last- 145day- )",
+      "init": 30,
+      "dev": 40,
+      "mid": 45,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Tomato (last- 155day- )",
+      "init": 35,
+      "dev": 40,
+      "mid": 50,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Tomato (last- 180day- )",
+      "init": 35,
+      "dev": 45,
+      "mid": 70,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Cantaloupe",
+      "init": 30,
+      "dev": 45,
+      "mid": 35,
+      "late": 10,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Cucumber (last- 105day- )",
+      "init": 20,
+      "dev": 30,
+      "mid": 40,
+      "late": 15,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Cucumber (last- 135day- )",
+      "init": 25,
+      "dev": 35,
+      "mid": 50,
+      "late": 20
+    },
+    {
+      "name": "Pumpkin, Winter Squash (last- 100day- )",
+      "init": 20,
+      "dev": 30,
+      "mid": 30,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Pumpkin, Winter Squash (last- 120day- )",
+      "init": 25,
+      "dev": 35,
+      "mid": 35,
+      "late": 25,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Squash, Zucchini (last- 90day- )",
+      "init": 20,
+      "dev": 30,
+      "mid": 25,
+      "late": 15,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Squash, Zucchini (last- 100day- )",
+      "init": 25,
+      "dev": 35,
+      "mid": 25,
+      "late": 15,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "sweet melon (last- 120day- )",
+      "init": 25,
+      "dev": 35,
+      "mid": 40,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "sweet melon (last- 135day- )",
+      "init": 15,
+      "dev": 45,
+      "mid": 40,
+      "late": 15,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "sweet melon (last- 140day- )",
+      "init": 30,
+      "dev": 30,
+      "mid": 50,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "sweet melon (last- 160day- )",
+      "init": 30,
+      "dev": 45,
+      "mid": 65,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "watermelon (last- 80day- )",
+      "init": 10,
+      "dev": 20,
+      "mid": 20,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "watermelon (last- 110day- )",
+      "init": 20,
+      "dev": 30,
+      "mid": 30,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Beets, table (last- 70day- )",
+      "init": 15,
+      "dev": 25,
+      "mid": 20,
+      "late": 10,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Beets, table (last- 90day- )",
+      "init": 25,
+      "dev": 30,
+      "mid": 25,
+      "late": 10,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Cassava (last- 210day- )",
+      "init": 20,
+      "dev": 40,
+      "mid": 90,
+      "late": 60,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Cassava (last- 360day- )",
+      "init": 150,
+      "dev": 40,
+      "mid": 110,
+      "late": 60,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "potato (last- 130day- )",
+      "init": 25,
+      "dev": 30,
+      "mid": 45,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "potato (last- 145day- )",
+      "init": 30,
+      "dev": 35,
+      "mid": 50,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "potato (last- 165day- )",
+      "init": 45,
+      "dev": 30,
+      "mid": 70,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "sweet potato (last- 125day- )",
+      "init": 15,
+      "dev": 30,
+      "mid": 50,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "sweet potato (last- 150day- )",
+      "init": 20,
+      "dev": 30,
+      "mid": 60,
+      "late": 40,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Sugar beet (last- 160day- )",
+      "init": 25,
+      "dev": 35,
+      "mid": 50,
+      "late": 50,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Sugar beet (last- 180day- )",
+      "init": 50,
+      "dev": 40,
+      "mid": 50,
+      "late": 40,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Sugar beet (last- 205day- )",
+      "init": 35,
+      "dev": 60,
+      "mid": 70,
+      "late": 40,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Sugar beet (last- 230day- )",
+      "init": 45,
+      "dev": 75,
+      "mid": 80,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Sugar beet (last- 255day- )",
+      "init": 25,
+      "dev": 65,
+      "mid": 100,
+      "late": 65,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Beans, green (last- 75day- )",
+      "init": 15,
+      "dev": 25,
+      "mid": 25,
+      "late": 10,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Beans, green (last- 90day- )",
+      "init": 20,
+      "dev": 30,
+      "mid": 30,
+      "late": 10,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Beans, dry (last- 100day- )",
+      "init": 25,
+      "dev": 25,
+      "mid": 30,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Beans, dry (last- 110day- )",
+      "init": 20,
+      "dev": 30,
+      "mid": 40,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Fababean (broad bean, green ",
+      "init": 90,
+      "dev": 45,
+      "mid": 40,
+      "late": 0,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Fababean (broad bean, dry ",
+      "init": 90,
+      "dev": 45,
+      "mid": 40,
+      "late": 60,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Green Gram and Cowpeas",
+      "init": 20,
+      "dev": 30,
+      "mid": 30,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Groundnut (Peanut) (last- 130day- )",
+      "init": 25,
+      "dev": 35,
+      "mid": 45,
+      "late": 25,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Groundnut (Peanut) (last- 140day- )",
+      "init": 35,
+      "dev": 35,
+      "mid": 35,
+      "late": 35,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Lentil (last- 150day- )",
+      "init": 20,
+      "dev": 30,
+      "mid": 60,
+      "late": 40,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Lentil (last- 170day- )",
+      "init": 25,
+      "dev": 35,
+      "mid": 70,
+      "late": 40,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Peas, green (last- 90day- )",
+      "init": 15,
+      "dev": 25,
+      "mid": 35,
+      "late": 15,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Peas, green (last- 110day- )",
+      "init": 35,
+      "dev": 25,
+      "mid": 30,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Peas, dry (last- 90day- )",
+      "init": 15,
+      "dev": 25,
+      "mid": 35,
+      "late": 15,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Peas, dry (last- 110day- )",
+      "init": 35,
+      "dev": 25,
+      "mid": 30,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Soybeans (last- 85day- )",
+      "init": 15,
+      "dev": 15,
+      "mid": 40,
+      "late": 15,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Soybeans (last- 140day- )",
+      "init": 20,
+      "dev": 35,
+      "mid": 60,
+      "late": 25,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Soybeans (last- 150day- )",
+      "init": 20,
+      "dev": 25,
+      "mid": 75,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Artichokes (last- 325day- )",
+      "init": 20,
+      "dev": 25,
+      "mid": 250,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Artichokes (last- 360day- )",
+      "init": 40,
+      "dev": 40,
+      "mid": 250,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Asparagus (last- 230day- )",
+      "init": 50,
+      "dev": 30,
+      "mid": 100,
+      "late": 50,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Asparagus (last- 365day- )",
+      "init": 90,
+      "dev": 30,
+      "mid": 200,
+      "late": 45,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "cotton (last- 180day- )",
+      "init": 30,
+      "dev": 50,
+      "mid": 55,
+      "late": 45,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "cotton (last- 195day- )",
+      "init": 30,
+      "dev": 50,
+      "mid": 60,
+      "late": 55,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "cotton (last- 225day- )",
+      "init": 45,
+      "dev": 90,
+      "mid": 45,
+      "late": 45,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "flax (last- 150day- )",
+      "init": 25,
+      "dev": 35,
+      "mid": 50,
+      "late": 40,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "flax (last- 220day- )",
+      "init": 30,
+      "dev": 40,
+      "mid": 100,
+      "late": 50,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "castor bean (last- 135day- )",
+      "init": 20,
+      "dev": 40,
+      "mid": 50,
+      "late": 25,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "castor bean (last- 180day- )",
+      "init": 25,
+      "dev": 40,
+      "mid": 65,
+      "late": 50,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Safflower (last- 125day- )",
+      "init": 20,
+      "dev": 35,
+      "mid": 45,
+      "late": 25,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Safflower (last- 145day- )",
+      "init": 25,
+      "dev": 35,
+      "mid": 55,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Safflower (last- 190day- )",
+      "init": 35,
+      "dev": 55,
+      "mid": 60,
+      "late": 40,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " sesame",
+      "init": 20,
+      "dev": 30,
+      "mid": 40,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " sunflower",
+      "init": 25,
+      "dev": 35,
+      "mid": 45,
+      "late": 25,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Barley (last- 120day- )",
+      "init": 15,
+      "dev": 25,
+      "mid": 50,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Barley (last- 160day- )",
+      "init": 20,
+      "dev": 50,
+      "mid": 60,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Barley (last- 200day- )",
+      "init": 40,
+      "dev": 60,
+      "mid": 60,
+      "late": 40,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " oat (last- 120day- )",
+      "init": 15,
+      "dev": 25,
+      "mid": 50,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " oat (last- 160day- )",
+      "init": 20,
+      "dev": 50,
+      "mid": 60,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " oat (last- 200day- )",
+      "init": 40,
+      "dev": 60,
+      "mid": 60,
+      "late": 40,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " spring wheat (last- 120day- )",
+      "init": 15,
+      "dev": 25,
+      "mid": 50,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " spring wheat (last- 160day- )",
+      "init": 20,
+      "dev": 50,
+      "mid": 60,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " spring wheat (last- 200day- )",
+      "init": 40,
+      "dev": 60,
+      "mid": 60,
+      "late": 40,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " winter wheat (last- 180day- )",
+      "init": 20,
+      "dev": 60,
+      "mid": 70,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " winter wheat (last- 240day- )",
+      "init": 30,
+      "dev": 140,
+      "mid": 40,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Maize,grain (last- 125day- )",
+      "init": 20,
+      "dev": 35,
+      "mid": 40,
+      "late": 30
+    },
+    {
+      "name": " Maize,grain (last- 150day- )",
+      "init": 30,
+      "dev": 40,
+      "mid": 50,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Maize,grain (last- 180day- )",
+      "init": 30,
+      "dev": 50,
+      "mid": 60,
+      "late": 40,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Maize,sweet (last- 80day- )",
+      "init": 20,
+      "dev": 20,
+      "mid": 30,
+      "late": 10,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Maize,sweet (last- 110day- )",
+      "init": 30,
+      "dev": 30,
+      "mid": 30,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Maize,sweet (last- 140day- )",
+      "init": 20,
+      "dev": 40,
+      "mid": 70,
+      "late": 10,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " milet (last- 105day- )",
+      "init": 15,
+      "dev": 25,
+      "mid": 40,
+      "late": 25,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " milet (last- 140day- )",
+      "init": 20,
+      "dev": 30,
+      "mid": 55,
+      "late": 35,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Sorghum,grain (last- 130day- )",
+      "init": 20,
+      "dev": 35,
+      "mid": 40,
+      "late": 25,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Sorghum,grain (last- 140day- )",
+      "init": 20,
+      "dev": 30,
+      "mid": 55,
+      "late": 35,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Sorghum,sweet (last- 130day- )",
+      "init": 20,
+      "dev": 35,
+      "mid": 40,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Sorghum,sweet (last- 140day- )",
+      "init": 20,
+      "dev": 30,
+      "mid": 55,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " rice (last- 150day- )",
+      "init": 30,
+      "dev": 30,
+      "mid": 60,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " rice (last- 180day- )",
+      "init": 30,
+      "dev": 30,
+      "mid": 80,
+      "late": 40,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Alfalfa ,cutting periods",
+      "init": 10,
+      "dev": 20,
+      "mid": 20,
+      "late": 10,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": "Bermuda, seed",
+      "init": 10,
+      "dev": 25,
+      "mid": 35,
+      "late": 35,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " sugar cane,virgin (last- 405day- )",
+      "init": 35,
+      "dev": 60,
+      "mid": 190,
+      "late": 120,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " sugar cane,virgin (last- 480day- )",
+      "init": 50,
+      "dev": 70,
+      "mid": 220,
+      "late": 140,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " sugar cane,virgin (last- 720day- )",
+      "init": 75,
+      "dev": 105,
+      "mid": 330,
+      "late": 210,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " sugar cane,ratoon (last- 280day- )",
+      "init": 25,
+      "dev": 70,
+      "mid": 135,
+      "late": 50,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " sugar cane,ratoon (last- 320day- )",
+      "init": 30,
+      "dev": 50,
+      "mid": 180,
+      "late": 60,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " sugar cane,ratoon (last- 420day- )",
+      "init": 30,
+      "dev": 105,
+      "mid": 210,
+      "late": 70,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " banana,1st year ",
+      "init": 120,
+      "dev": 90,
+      "mid": 120,
+      "late": 60,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " banana,2nd year ",
+      "init": 20,
+      "dev": 60,
+      "mid": 180,
+      "late": 5,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " pinapple ",
+      "init": 60,
+      "dev": 120,
+      "mid": 600,
+      "late": 10,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " grapes, Raisin (last- 180day- )",
+      "init": 20,
+      "dev": 50,
+      "mid": 90,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " grapes, Raisin (last- 210day- )",
+      "init": 30,
+      "dev": 60,
+      "mid": 40,
+      "late": 80,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " grapes, Raisin (last- 240day- )",
+      "init": 20,
+      "dev": 40,
+      "mid": 120,
+      "late": 60,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " grapes, wine (last- 180day- )",
+      "init": 20,
+      "dev": 50,
+      "mid": 90,
+      "late": 20,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " grapes, wine (last- 210day- )",
+      "init": 30,
+      "dev": 60,
+      "mid": 40,
+      "late": 80,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " grapes, wine (last- 240day- )",
+      "init": 20,
+      "dev": 40,
+      "mid": 120,
+      "late": 60,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " hops",
+      "init": 25,
+      "dev": 4,
+      "mid": 80,
+      "late": 10
+    },
+    {
+      "name": " Walnut Orchard",
+      "init": 20,
+      "dev": 10,
+      "mid": 130,
+      "late": 30,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Olives ",
+      "init": 30,
+      "dev": 90,
+      "mid": 60,
+      "late": 90,
+      "count":0,
+      "date":0,
+      "flow":0
+    },
+    {
+      "name": " Pistachios ",
+      "init": 20,
+      "dev": 60,
+      "mid": 30,
+      "late": 40,
+      "count":0,
+      "date":0,
+      "flow":0
+    }
+  ]
+}

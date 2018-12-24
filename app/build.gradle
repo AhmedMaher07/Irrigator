@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.maher.irrigator"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://api.thingspeak.com/\"")
+            buildConfigField("String", "READ_KEY_ONE", "\"SXB8ZCZHR73HE37Q\"")
+            buildConfigField("String", "WRITE_KEY_ONE", "\"JCGSBM8K0P6GJXE4\"")
+            buildConfigField("String", "CHANNEL_ID_ONE", "\"657093\"")
+
+            buildConfigField("String", "READ_KEY_TWO", "\"Q3TDVEGV1Y171PHS\"")
+            buildConfigField("String", "WRITE_KEY_TWO", "\"ZPV2D62KSPK84QQI\"")
+            buildConfigField("String", "CHANNEL_ID_TWO", "\"661414\"")
+
+            buildConfigField("String", "READ_KEY_THIRD", "\"ZLVH3N0YM54KNEKR\"")
+            buildConfigField("String", "WRITE_KEY_THIRD", "\"P0LA1GX7VZPDE1DG\"")
+            buildConfigField("String", "CHANNEL_ID_THIRD", "\"661426\"")
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.recyclerview:recyclerview:$androidX_version"
+    implementation "com.google.android.material:material:$androidX_version"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.github.johnhiott:DarkSkyApi:v0.1.5'
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:3.11.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:3.11.0"
+
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation 'pub.devrel:easypermissions:2.0.0'
+    implementation 'com.google.dagger:dagger:2.17'
+    kapt 'com.google.dagger:dagger-android-processor:2.17'
+    kapt 'com.google.dagger:dagger-compiler:2.17'
+
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}

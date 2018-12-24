@@ -1,0 +1,838 @@
+{
+  "plants": [
+    {
+      "name": "Broccoli",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 0.95
+    },
+    {
+      "name": "Cabbage",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 0.95
+    },
+    {
+      "name": "Carrots (last-100day- )",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 0.95
+    },
+    {
+      "name": "Carrots (last-150day- )",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 0.95
+    },
+    {
+      "name": "Carrots (last-200day- )",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 0.95
+    },
+    {
+      "name": "Carrots (last-100day- )",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 0.95
+    },
+    {
+      "name": "Cauliflowe",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 0.95
+    },
+    {
+      "name": "Celery (last-125day- )",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 1
+    },
+    {
+      "name": "Celery (last-180day- )",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 1
+    },
+    {
+      "name": "Celery (last-210day- )",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 1
+    },
+    {
+      "name": "Lettuce (last-75day- )",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 0.95
+    },
+    {
+      "name": "Lettuce (last-105day- )",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 0.95
+    },
+    {
+      "name": "Lettuce (last-100day- )",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 0.95
+    },
+    {
+      "name": "Lettuce (last-140day- )",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 0.95
+    },
+    {
+      "name": "onion dry (last-150day- )",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 0.75
+    },
+    {
+      "name": "onion dry(last-210day- )",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 0.75
+    },
+    {
+      "name": "onion green (last-70day- )",
+      "ini": 0.7,
+      "mid": 1,
+      "end": 1
+    },
+    {
+      "name": "onion green (last-95day- )",
+      "ini": 0.7,
+      "mid": 1,
+      "end": 1
+    },
+    {
+      "name": "onion green (last-180day- )",
+      "ini": 0.7,
+      "mid": 1,
+      "end": 1
+    },
+    {
+      "name": "onion seed",
+      "ini": 0.7,
+      "mid": 1.05,
+      "end": 0.8
+    },
+    {
+      "name": "Spinach (last- 60/70day- )",
+      "ini": 0.7,
+      "mid": 1,
+      "end": 0.95
+    },
+    {
+      "name": "Spinach (last- 100day- )",
+      "ini": 0.7,
+      "mid": 1,
+      "end": 0.95
+    },
+    {
+      "name": "Radish (last- 35day- )",
+      "ini": 0.7,
+      "mid": 1,
+      "end": 0.95
+    },
+    {
+      "name": "Radish (last- 40day- )",
+      "ini": 0.7,
+      "mid": 1,
+      "end": 0.95
+    },
+    {
+      "name": "Egg plant (last- 40day- )",
+      "ini": 0.6,
+      "mid": 1.05,
+      "end": 0.9
+    },
+    {
+      "name": "Egg plant (last- 130day- )",
+      "ini": 0.6,
+      "mid": 1.05,
+      "end": 0.9
+    },
+    {
+      "name": "Sweet Peppers (bell) (last- 125day- )",
+      "ini": 0.6,
+      "mid": 1.05,
+      "end": 0.9
+    },
+    {
+      "name": "Sweet Peppers (bell) (last- 210day- )",
+      "ini": 0.6,
+      "mid": 1.05,
+      "end": 0.9
+    },
+    {
+      "name": "Tomato (last- 135day- )",
+      "ini": 0.6,
+      "mid": 1.15,
+      "end": 0.9
+    },
+    {
+      "name": "Tomato (last- 145day- )",
+      "ini": 0.6,
+      "mid": 1.15,
+      "end": 0.9
+    },
+    {
+      "name": "Tomato (last- 155day- )",
+      "ini": 0.6,
+      "mid": 1.15,
+      "end": 0.9
+    },
+    {
+      "name": "Tomato (last- 180day- )",
+      "ini": 0.6,
+      "mid": 1.15,
+      "end": 0.9
+    },
+    {
+      "name": "Cantaloupe",
+      "ini": 0.5,
+      "mid": 0.85,
+      "end": 0.6
+    },
+    {
+      "name": "Cucumber (last- 105day- )",
+      "ini": 0.6,
+      "mid": 1,
+      "end": 0.75
+    },
+    {
+      "name": "Cucumber (last- 135day- )",
+      "ini": 0.6,
+      "mid": 1,
+      "end": 0.75
+    },
+    {
+      "name": "Pumpkin, Winter Squash (last- 100day- )",
+      "ini": 0.5,
+      "mid": 1,
+      "end": 0.8
+    },
+    {
+      "name": "Pumpkin, Winter Squash (last- 120day- )",
+      "ini": 0.5,
+      "mid": 1,
+      "end": 0.8
+    },
+    {
+      "name": "Squash, Zucchini (last- 90day- )",
+      "ini": 0.5,
+      "mid": 0.95,
+      "end": 0.75
+    },
+    {
+      "name": "Squash, Zucchini (last- 100day- )",
+      "ini": 0.5,
+      "mid": 0.95,
+      "end": 0.75
+    },
+    {
+      "name": "sweet melon (last- 120day- )",
+      "ini": 0.5,
+      "mid": 1.05,
+      "end": 0.75
+    },
+    {
+      "name": "sweet melon (last- 135day- )",
+      "ini": 0.5,
+      "mid": 1.05,
+      "end": 0.75
+    },
+    {
+      "name": "sweet melon (last- 140day- )",
+      "ini": 0.5,
+      "mid": 1.05,
+      "end": 0.75
+    },
+    {
+      "name": "sweet melon (last- 160day- )",
+      "ini": 0.5,
+      "mid": 1.05,
+      "end": 0.75
+    },
+    {
+      "name": "watermelon (last- 80day- )",
+      "ini": 0.4,
+      "mid": 1,
+      "end": 0.75
+    },
+    {
+      "name": "watermelon (last- 110day- )",
+      "ini": 0.4,
+      "mid": 1,
+      "end": 0.75
+    },
+    {
+      "name": "Beets, table (last- 70day- )",
+      "ini": 0.5,
+      "mid": 1.05,
+      "end": 0.95
+    },
+    {
+      "name": "Beets, table (last- 90day- )",
+      "ini": 0.5,
+      "mid": 1.05,
+      "end": 0.95
+    },
+    {
+      "name": "Cassava (last- 210day- )",
+      "ini": 0.3,
+      "mid": 0.8,
+      "end": 0.3
+    },
+    {
+      "name": "Cassava (last- 360day- )",
+      "ini": 0.3,
+      "mid": 1.1,
+      "end": 0.5
+    },
+    {
+      "name": "potato (last- 130day- )",
+      "ini": 0.5,
+      "mid": 1.15,
+      "end": 0.75
+    },
+    {
+      "name": "potato (last- 145day- )",
+      "ini": 0.5,
+      "mid": 1.15,
+      "end": 0.75
+    },
+    {
+      "name": "potato (last- 165day- )",
+      "ini": 0.5,
+      "mid": 1.15,
+      "end": 0.75
+    },
+    {
+      "name": "sweet potato (last- 125day- )",
+      "ini": 0.5,
+      "mid": 1.15,
+      "end": 0.65
+    },
+    {
+      "name": "sweet potato (last- 150day- )",
+      "ini": 0.5,
+      "mid": 1.15,
+      "end": 0.65
+    },
+    {
+      "name": "Sugar beet (last- 160day- )",
+      "ini": 0.35,
+      "mid": 1.2,
+      "end": 0.7
+    },
+    {
+      "name": "Sugar beet (last- 180day- )",
+      "ini": 0.35,
+      "mid": 1.2,
+      "end": 0.7
+    },
+    {
+      "name": "Sugar beet (last- 205day- )",
+      "ini": 0.35,
+      "mid": 1.2,
+      "end": 0.7
+    },
+    {
+      "name": "Sugar beet (last- 230day- )",
+      "ini": 0.35,
+      "mid": 1.2,
+      "end": 0.7
+    },
+    {
+      "name": "Sugar beet (last- 255day- )",
+      "ini": 0.35,
+      "mid": 1.2,
+      "end": 0.7
+    },
+    {
+      "name": "Beans, green (last- 75day- )",
+      "ini": 0.5,
+      "mid": 1.05,
+      "end": 0.9
+    },
+    {
+      "name": "Beans, green (last- 90day- )",
+      "ini": 0.5,
+      "mid": 1.05,
+      "end": 0.9
+    },
+    {
+      "name": "Beans, dry (last- 100day- )",
+      "ini": 0.4,
+      "mid": 1.15,
+      "end": 0.35
+    },
+    {
+      "name": "Beans, dry (last- 110day- )",
+      "ini": 0.4,
+      "mid": 1.15,
+      "end": 0.35
+    },
+    {
+      "name": "Fababean (broad bean, green ",
+      "ini": 0.5,
+      "mid": 1.15,
+      "end": 1.1
+    },
+    {
+      "name": "Fababean (broad bean, dry ",
+      "ini": 0.5,
+      "mid": 1.15,
+      "end": 0.3
+    },
+    {
+      "name": "Green Gram and Cowpeas",
+      "ini": 0.4,
+      "mid": 1.15,
+      "end": 0.6
+    },
+    {
+      "name": "Groundnut (Peanut) (last- 130day- )",
+      "ini": 0.4,
+      "mid": 1.15,
+      "end": 0.6
+    },
+    {
+      "name": "Groundnut (Peanut) (last- 140day- )",
+      "ini": 0.4,
+      "mid": 1.15,
+      "end": 0.6
+    },
+    {
+      "name": "Lentil (last- 150day- )",
+      "ini": 0.4,
+      "mid": 1.1,
+      "end": 0.3
+    },
+    {
+      "name": "Lentil (last- 170day- )",
+      "ini": 0.4,
+      "mid": 1.1,
+      "end": 0.3
+    },
+    {
+      "name": "Peas, green (last- 90day- )",
+      "ini": 0.5,
+      "mid": 1.15,
+      "end": 0.3
+    },
+    {
+      "name": "Peas, green (last- 110day- )",
+      "ini": 0.5,
+      "mid": 1.15,
+      "end": 1.1
+    },
+    {
+      "name": "Peas, dry (last- 90day- )",
+      "ini": 0.4,
+      "mid": 1.15,
+      "end": 0.3
+    },
+    {
+      "name": "Peas, dry (last- 110day- )",
+      "ini": 0.4,
+      "mid": 1.15,
+      "end": 0.3
+    },
+    {
+      "name": "Soybeans (last- 85day- )",
+      "ini": 0.4,
+      "mid": 1.15,
+      "end": 0.5
+    },
+    {
+      "name": "Soybeans (last- 140day- )",
+      "ini": 0.4,
+      "mid": 1.15,
+      "end": 0.5
+    },
+    {
+      "name": "Soybeans (last- 150day- )",
+      "ini": 0.4,
+      "mid": 1.15,
+      "end": 0.5
+    },
+    {
+      "name": "Artichokes (last- 325day- )",
+      "ini": 0.5,
+      "mid": 1,
+      "end": 0.95
+    },
+    {
+      "name": "Artichokes (last- 360day- )",
+      "ini": 0.5,
+      "mid": 1,
+      "end": 0.95
+    },
+    {
+      "name": "Asparagus (last- 230day- )",
+      "ini": 0.5,
+      "mid": 0.95,
+      "end": 0.3
+    },
+    {
+      "name": "Asparagus (last- 365day- )",
+      "ini": 0.5,
+      "mid": 0.95,
+      "end": 0.3
+    },
+    {
+      "name": "cotton (last- 180day- )",
+      "ini": 0.5,
+      "mid": 1.2,
+      "end": 0.7
+    },
+    {
+      "name": "cotton (last- 195day- )",
+      "ini": 0.5,
+      "mid": 1.2,
+      "end": 0.7
+    },
+    {
+      "name": "cotton (last- 225day- )",
+      "ini": 0.5,
+      "mid": 1.2,
+      "end": 0.7
+    },
+    {
+      "name": "flax (last- 150day- )",
+      "ini": 0.5,
+      "mid": 1.1,
+      "end": 0.25
+    },
+    {
+      "name": "flax (last- 220day- )",
+      "ini": 0.5,
+      "mid": 1.1,
+      "end": 0.25
+    },
+    {
+      "name": "castor bean (last- 135day- )",
+      "ini": 0.35,
+      "mid": 1.15,
+      "end": 0.55
+    },
+    {
+      "name": "castor bean (last- 180day- )",
+      "ini": 0.35,
+      "mid": 1.15,
+      "end": 0.55
+    },
+    {
+      "name": " Safflower (last- 125day- )",
+      "ini": 0.35,
+      "mid": 1,
+      "end": 0.25
+    },
+    {
+      "name": " Safflower (last- 145day- )",
+      "ini": 0.35,
+      "mid": 1,
+      "end": 0.25
+    },
+    {
+      "name": " Safflower (last- 190day- )",
+      "ini": 0.35,
+      "mid": 1,
+      "end": 0.25
+    },
+    {
+      "name": " sesame",
+      "ini": 0.35,
+      "mid": 1.1,
+      "end": 0.25
+    },
+    {
+      "name": " sunflower",
+      "ini": 0.35,
+      "mid": 1.1,
+      "end": 0.35
+    },
+    {
+      "name": " Barley (last- 120day- )",
+      "ini": 0.3,
+      "mid": 1.15,
+      "end": 0.25
+    },
+    {
+      "name": " Barley (last- 160day- )",
+      "ini": 0.3,
+      "mid": 1.15,
+      "end": 0.25
+    },
+    {
+      "name": " Barley (last- 200day- )",
+      "ini": 0.3,
+      "mid": 1.15,
+      "end": 0.25
+    },
+    {
+      "name": " oat (last- 120day- )",
+      "ini": 0.3,
+      "mid": 1.15,
+      "end": 0.25
+    },
+    {
+      "name": " oat (last- 160day- )",
+      "ini": 0.3,
+      "mid": 1.15,
+      "end": 0.25
+    },
+    {
+      "name": " oat (last- 200day- )",
+      "ini": 0.3,
+      "mid": 1.15,
+      "end": 0.25
+    },
+    {
+      "name": " spring wheat (last- 120day- )",
+      "ini": 0.3,
+      "mid": 1.15,
+      "end": 0.25
+    },
+    {
+      "name": " spring wheat (last- 160day- )",
+      "ini": 0.3,
+      "mid": 1.15,
+      "end": 0.25
+    },
+    {
+      "name": " spring wheat (last- 200day- )",
+      "ini": 0.3,
+      "mid": 1.15,
+      "end": 0.25
+    },
+    {
+      "name": " winter wheat (last- 180day- )",
+      "ini": 0.7,
+      "mid": 1.15,
+      "end": 0.3
+    },
+    {
+      "name": " winter wheat (last- 240day- )",
+      "ini": 0.7,
+      "mid": 1.15,
+      "end": 0.3
+    },
+    {
+      "name": " Maize,grain (last- 125day- )",
+      "ini": 0.3,
+      "mid": 1.2,
+      "end": 0.6
+    },
+    {
+      "name": " Maize,grain (last- 150day- )",
+      "ini": 0.3,
+      "mid": 1.2,
+      "end": 0.6
+    },
+    {
+      "name": " Maize,grain (last- 180day- )",
+      "ini": 0.3,
+      "mid": 1.2,
+      "end": 0.6
+    },
+    {
+      "name": " Maize,sweet (last- 80day- )",
+      "ini": 0.3,
+      "mid": 1.2,
+      "end": 1.05
+    },
+    {
+      "name": " Maize,sweet (last- 110day- )",
+      "ini": 0.3,
+      "mid": 1.2,
+      "end": 1.05
+    },
+    {
+      "name": " Maize,sweet (last- 140day- )",
+      "ini": 0.3,
+      "mid": 1.2,
+      "end": 1.05
+    },
+    {
+      "name": " milet (last- 105day- )",
+      "ini": 0.3,
+      "mid": 1,
+      "end": 0.3
+    },
+    {
+      "name": " milet (last- 140day- )",
+      "ini": 0.3,
+      "mid": 1,
+      "end": 0.3
+    },
+    {
+      "name": " Sorghum,grain (last- 130day- )",
+      "ini": 0.3,
+      "mid": 1,
+      "end": 0.55
+    },
+    {
+      "name": " Sorghum,grain (last- 140day- )",
+      "ini": 0.3,
+      "mid": 1,
+      "end": 0.55
+    },
+    {
+      "name": " Sorghum,sweet (last- 130day- )",
+      "ini": 0.3,
+      "mid": 1.2,
+      "end": 1.05
+    },
+    {
+      "name": " Sorghum,sweet (last- 140day- )",
+      "ini": 0.3,
+      "mid": 1.2,
+      "end": 1.05
+    },
+    {
+      "name": " rice (last- 150day- )",
+      "ini": 1.05,
+      "mid": 1.2,
+      "end": 0.9
+    },
+    {
+      "name": " rice (last- 180day- )",
+      "ini": 1.05,
+      "mid": 1.2,
+      "end": 0.9
+    },
+    {
+      "name": " Alfalfa ,cutting periods",
+      "ini": 0.4,
+      "mid": 1.2,
+      "end": 1.15
+    },
+    {
+      "name": "Bermuda, seed",
+      "ini": 0.35,
+      "mid": 0.9,
+      "end": 0.65
+    },
+    {
+      "name": " sugar cane,virgin (last- 405day- )",
+      "ini": 0.4,
+      "mid": 1.25,
+      "end": 0.75
+    },
+    {
+      "name": " sugar cane,virgin (last- 480day- )",
+      "ini": 0.4,
+      "mid": 1.25,
+      "end": 0.75
+    },
+    {
+      "name": " sugar cane,virgin (last- 720day- )",
+      "ini": 0.4,
+      "mid": 1.25,
+      "end": 0.75
+    },
+    {
+      "name": " sugar cane,ratoon (last- 280day- )",
+      "ini": 0.4,
+      "mid": 1.25,
+      "end": 0.75
+    },
+    {
+      "name": " sugar cane,ratoon (last- 320day- )",
+      "ini": 0.4,
+      "mid": 1.25,
+      "end": 0.75
+    },
+    {
+      "name": " sugar cane,ratoon (last- 420day- )",
+      "ini": 0.4,
+      "mid": 1.25,
+      "end": 0.75
+    },
+    {
+      "name": " banana,1st year ",
+      "ini": 0.5,
+      "mid": 1.1,
+      "end": 1
+    },
+    {
+      "name": " banana,2nd year ",
+      "ini": 1,
+      "mid": 1.2,
+      "end": 1.1
+    },
+    {
+      "name": " pinapple ",
+      "ini": 0.5,
+      "mid": 0.3,
+      "end": 0.5
+    },
+    {
+      "name": " grapes, Raisin (last- 180day- )",
+      "ini": 0.3,
+      "mid": 0.85,
+      "end": 0.45
+    },
+    {
+      "name": " grapes, Raisin (last- 210day- )",
+      "ini": 0.3,
+      "mid": 0.85,
+      "end": 0.45
+    },
+    {
+      "name": " grapes, Raisin (last- 240day- )",
+      "ini": 0.3,
+      "mid": 0.85,
+      "end": 0.45
+    },
+    {
+      "name": " grapes, wine (last- 180day- )",
+      "ini": 0.3,
+      "mid": 0.7,
+      "end": 0.45
+    },
+    {
+      "name": " grapes, wine (last- 210day- )",
+      "ini": 0.3,
+      "mid": 0.7,
+      "end": 0.45
+    },
+    {
+      "name": " grapes, wine (last- 240day- )",
+      "ini": 0.3,
+      "mid": 0.7,
+      "end": 0.45
+    },
+    {
+      "name": " hops",
+      "ini": 0.3,
+      "mid": 1.05,
+      "end": 0.85
+    },
+    {
+      "name": " Walnut Orchard",
+      "ini": 0.5,
+      "mid": 1.1,
+      "end": 0.65
+    },
+    {
+      "name": " Olives ",
+      "ini": 0.65,
+      "mid": 0.7,
+      "end": 0.7
+    },
+    {
+      "name": " Pistachios ",
+      "ini": 0.4,
+      "mid": 1.1,
+      "end": 0.65
+    }
+  ]
+}
