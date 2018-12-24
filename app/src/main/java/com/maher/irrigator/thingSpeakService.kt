@@ -27,6 +27,6 @@ internal interface thingSpeakService {
     fun setTime(@Query("api_key") key: String, @Query("field4") field: Int): Call<ResponseBody>
 
     @GET("update")
-    fun setOperation(@Query("api_key") key: String, @Query("field6") field: Int): Call<ResponseBody>
+    fun setOperation(@Query("api_key") key: String, @Query("field6") field: Int): Call<Int>
 
 }

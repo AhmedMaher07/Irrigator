@@ -18,7 +18,6 @@ import com.maher.irrigator.widget.spinner.SpinnerAdapter
 import com.maher.irrigator.widget.spinner.SpinnerTextView
 import com.maher.irrigator.widget.spinner.SpinnerTextViewBaseAdapter
 import okhttp3.OkHttpClient
-import okhttp3.ResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Callback
@@ -203,12 +202,17 @@ class HomeAdapter(context: Context?) : EmptyBaseAdapter<L>(context) {
     }
 
     fun startOperation(key: String, context: Context) {
-        thingSpeak.setOperation(key, 1).enqueue(object : Callback<ResponseBody> {
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+        thingSpeak.setOperation(key, 1).enqueue(object : Callback<Int> {
+            override fun onFailure(call: Call<Int>, t: Throwable) {
             }
 
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                Toast.makeText(context.applicationContext, "Operation Started", Toast.LENGTH_SHORT).show()
+            override fun onResponse(call: Call<Int>, response: Response<Int>) {
+                if (response.isSuccessful) {
+                    response.body()?.let {
+                        if (it > 0)
+                            Toast.makeText(context.applicationContext, "Operation Started", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         })
     }

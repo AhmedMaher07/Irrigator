@@ -153,7 +153,7 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
                         }
                     })
 
-                }else{
+                } else {
                     onBackPressed()
                     Toast.makeText(applicationContext, "Latitude and Longitude not Specified", Toast.LENGTH_LONG).show()
                 }
@@ -365,14 +365,17 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
         }
     }
 
-    fun stopOperation(key: String){
-        thingSpeak.setOperation(key, 0).enqueue(object : Callback<ResponseBody> {
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+    private fun stopOperation(key: String) {
+        thingSpeak.setOperation(key, 0).enqueue(object : Callback<Int> {
+            override fun onFailure(call: Call<Int>, t: Throwable) {
             }
 
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                if(response.isSuccessful){
-                    Toast.makeText(applicationContext, "Operation Stopped", Toast.LENGTH_SHORT).show()
+            override fun onResponse(call: Call<Int>, response: Response<Int>) {
+                if (response.isSuccessful) {
+                    response.body()?.let {
+                        if (it > 0)
+                            Toast.makeText(applicationContext, "Operation Started", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         })
