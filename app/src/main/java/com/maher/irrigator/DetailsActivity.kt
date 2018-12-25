@@ -93,6 +93,7 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
         if (lPlant == null || kcPlant == null || area == -1) {
             onBackPressed()
         }
+
         when (area) {
             0 -> {
                 CHANNEL_ID = BuildConfig.CHANNEL_ID_ONE
