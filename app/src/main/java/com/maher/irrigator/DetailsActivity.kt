@@ -231,7 +231,7 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
         val formatter = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         val now = Date()
         var difference: Int
-        var prevMoisture: Int
+        var prevMoisture: Double
 
         thingSpeak.getMoisture(CHANNEL_ID, READ_API_KEY).enqueue(object : Callback<Moisture> {
             @SuppressLint("SetTextI18n")
@@ -242,16 +242,16 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
                         progress.hide()
                         container.visibility = View.VISIBLE
                         when {
-                            response.body()?.field3?.toInt()!! > 70 -> {
+                            response.body()?.field3?.toDouble()!! > 70.0 -> {
                                 stopOperation(WRITE_API_KEY)
                                 water_needed.text = "No water needed, It rains"
                                 water_needed_value.text = ""
                                 Toast.makeText(applicationContext, "Operation Satisfied", Toast.LENGTH_SHORT).show()
                             }
                             else -> {
-                                prevMoisture = response.body()?.field3?.toInt()!!
+                                prevMoisture = response.body()?.field3?.toDouble()!!
                                 set10thTimeOperation(WRITE_API_KEY, tMax, tMin, humidity, j, lat, ratio, pressure, u, lPlant, kcPlant)
-                                water_needed.text = "Water Needed ="
+                                water_needed.text = "Water Needed = "
                                 water_needed_value.text = (Etc(tMax, tMin, humidity, j, lat, ratio, pressure, u, lPlant, kcPlant).div(10)).toInt().toString()
 
                                 Handler().postDelayed({
@@ -262,7 +262,7 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
 
                                         override fun onResponse(call: Call<Moisture>, response: Response<Moisture>) {
                                             if (response.isSuccessful) {
-                                                if (response.body()?.field3?.toInt() == prevMoisture) {
+                                                if (response.body()?.field3?.toDouble() == prevMoisture) {
                                                     ViewDialog().showErrorDialog(applicationContext, "Something went wrong")
                                                     stopOperation(WRITE_API_KEY)
                                                 } else {
@@ -312,15 +312,15 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
                         progress.hide()
                         container.visibility = View.VISIBLE
                         when {
-                            response.body()?.field3?.toInt()!! > 70 -> {
+                            response.body()?.field3?.toDouble()!! > 70.0 -> {
                                 stopOperation(WRITE_API_KEY)
                                 water_needed.text = "No water needed, It rains"
                                 water_needed_value.text = ""
                                 Toast.makeText(applicationContext, "Operation Satisfied", Toast.LENGTH_SHORT).show()
                             }
-                            response.body()?.field3?.toInt()!! < 5 -> {
+                            response.body()?.field3?.toDouble()!! < 5.0 -> {
                                 set10thTimeOperation(WRITE_API_KEY, tMax, tMin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant)
-                                water_needed.text = "Water Needed ="
+                                water_needed.text = "Water Needed = "
                                 water_needed_value.text = (Etc(tMax, tMin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).div(10)).toInt().toString()
                                 stopOperation(WRITE_API_KEY)
                             }
@@ -386,12 +386,12 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
             }
 
             planting_date_value.text = lPlant.date.toString()
-            t_h_l_value.text = "${this.temperatureMax} - ${this.temperatureMin}"
+            t_h_l_value.text = "( ${this.temperatureMax} ) - ( ${this.temperatureMin} )"
             summary_value.text = this.summary
             hum_value.text = this.humidity
             pre_value.text = this.pressure
             wind_speed_value.text = this.windSpeed
-            lat_lng_value.text = "$lat - $lng"
+            lat_lng_value.text = "( $lat ) - ( $lng )"
 
             thingSpeak(
                 this.precipProbability.toDouble(),
