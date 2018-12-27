@@ -227,6 +227,8 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
 
     private fun isNotRaining(tMax: Double, tMin: Double, humidity: Double, j: Int, lat: Double, ratio: Double, pressure: Double, u: Double, lPlant: LPlant, kcPlant: KcPlant) {
         setProbability(WRITE_API_KEY, 0)
+        setProbability(WRITE_API_KEY, 0)
+        setTimeOperation(WRITE_API_KEY, tMax, tMin, humidity, j, lat, ratio, pressure, u, lPlant, kcPlant)
         setTimeOperation(WRITE_API_KEY, tMax, tMin, humidity, j, lat, ratio, pressure, u, lPlant, kcPlant)
         val formatter = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         val now = Date()
@@ -242,33 +244,41 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
                         progress.hide()
                         container.visibility = View.VISIBLE
                         when {
-                            response.body()?.field3?.toDouble()!! > 70.0 -> {
+                            response.body()?.field3?.toDouble()!! > 50.0 -> {
+                                setTimeZero(WRITE_API_KEY)
+                                setTimeZero(WRITE_API_KEY)
                                 stopOperation(WRITE_API_KEY)
-                                water_needed.text = "No water needed, It rains"
-                                water_needed_value.text = ""
+                                stopOperation(WRITE_API_KEY)
+                                water_needed.text = "Water Needed = "
+                                water_needed_value.text = String.format("%.4f", (Etc(tMax, tMin, humidity, j, lat, ratio, pressure, u, lPlant, kcPlant))) + " Litre"
                                 Toast.makeText(applicationContext, "Operation Satisfied", Toast.LENGTH_SHORT).show()
                             }
                             else -> {
                                 prevMoisture = response.body()?.field3?.toDouble()!!
                                 set10thTimeOperation(WRITE_API_KEY, tMax, tMin, humidity, j, lat, ratio, pressure, u, lPlant, kcPlant)
+                                set10thTimeOperation(WRITE_API_KEY, tMax, tMin, humidity, j, lat, ratio, pressure, u, lPlant, kcPlant)
                                 water_needed.text = "Water Needed = "
-                                water_needed_value.text = (Etc(tMax, tMin, humidity, j, lat, ratio, pressure, u, lPlant, kcPlant).div(10)).toInt().toString()
+                                water_needed_value.text = String.format("%.4f", (Etc(tMax, tMin, humidity, j, lat, ratio, pressure, u, lPlant, kcPlant).div(10))) + " Litre"
 
                                 Handler().postDelayed({
                                     call.clone().enqueue(object : Callback<Moisture> {
                                         override fun onFailure(call: Call<Moisture>, t: Throwable) {
+                                            stopOperation(WRITE_API_KEY)
                                             stopOperation(WRITE_API_KEY)
                                         }
 
                                         override fun onResponse(call: Call<Moisture>, response: Response<Moisture>) {
                                             if (response.isSuccessful) {
                                                 if (response.body()?.field3?.toDouble() == prevMoisture) {
-                                                    ViewDialog().showErrorDialog(applicationContext, "Something went wrong")
+                                                    ViewDialog().showErrorDialog(this@DetailsActivity, "Something went wrong")
+                                                    stopOperation(WRITE_API_KEY)
                                                     stopOperation(WRITE_API_KEY)
                                                 } else {
                                                     stopOperation(WRITE_API_KEY)
+                                                    stopOperation(WRITE_API_KEY)
                                                 }
                                             } else {
+                                                stopOperation(WRITE_API_KEY)
                                                 stopOperation(WRITE_API_KEY)
                                             }
                                         }
@@ -298,7 +308,8 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
     }
 
 
-    private fun isRaining(tMax: Double, tMin: Double, humidity: Double, j: Int, lat: Double, ratio: Double, pressure: Double, U: Double, lPlant: LPlant, kcPlant: KcPlant) {
+    private fun isRaining(tMax: Double, tMin: Double, humidity: Double, j: Int, lat: Double, ratio: Double, pressure: Double, u: Double, lPlant: LPlant, kcPlant: KcPlant) {
+        setProbability(WRITE_API_KEY, 1)
         setProbability(WRITE_API_KEY, 1)
         val formatter = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         val now = Date()
@@ -312,21 +323,27 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
                         progress.hide()
                         container.visibility = View.VISIBLE
                         when {
-                            response.body()?.field3?.toDouble()!! > 70.0 -> {
+                            response.body()?.field3?.toDouble()!! > 50.0 -> {
+                                setTimeZero(WRITE_API_KEY)
+                                setTimeZero(WRITE_API_KEY)
+                                stopOperation(WRITE_API_KEY)
                                 stopOperation(WRITE_API_KEY)
                                 water_needed.text = "No water needed, It rains"
                                 water_needed_value.text = ""
                                 Toast.makeText(applicationContext, "Operation Satisfied", Toast.LENGTH_SHORT).show()
                             }
                             response.body()?.field3?.toDouble()!! < 5.0 -> {
-                                set10thTimeOperation(WRITE_API_KEY, tMax, tMin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant)
+                                set10thTimeOperation(WRITE_API_KEY, tMax, tMin, humidity, j, lat, ratio, pressure, u, lPlant, kcPlant)
+                                set10thTimeOperation(WRITE_API_KEY, tMax, tMin, humidity, j, lat, ratio, pressure, u, lPlant, kcPlant)
                                 water_needed.text = "Water Needed = "
-                                water_needed_value.text = (Etc(tMax, tMin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).div(10)).toInt().toString()
+                                water_needed_value.text = String.format("%.4f", (Etc(tMax, tMin, humidity, j, lat, ratio, pressure, u, lPlant, kcPlant).div(10))) + " Litre"
+                                stopOperation(WRITE_API_KEY)
                                 stopOperation(WRITE_API_KEY)
                             }
                             else -> {
                                 water_needed.text = "Wait For Raining"
                                 water_needed_value.text = ""
+                                stopOperation(WRITE_API_KEY)
                                 stopOperation(WRITE_API_KEY)
                             }
                         }
@@ -435,19 +452,22 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
         })
     }
 
-    private fun setTimeOperation(
-        key: String, tMax: Double,
-        tMin: Double,
-        humidity: Double,
-        j: Int,
-        lat: Double,
-        ratio: Double,
-        pressure: Double,
-        U: Double,
-        lPlant: LPlant,
-        kcPlant: KcPlant
-    ) {
+    private fun setTimeOperation(key: String, tMax: Double, tMin: Double, humidity: Double, j: Int, lat: Double, ratio: Double, pressure: Double, U: Double, lPlant: LPlant, kcPlant: KcPlant) {
         thingSpeak.setTime(key, time(tMax, tMin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant).toInt())
+            .enqueue(object : Callback<ResponseBody> {
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                }
+
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    if (response.isSuccessful) {
+
+                    }
+                }
+            })
+    }
+
+    private fun setTimeZero(key: String) {
+        thingSpeak.setTime(key, 0)
             .enqueue(object : Callback<ResponseBody> {
                 override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                 }
@@ -567,21 +587,8 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
         return 0
     }
 
-    fun Eto(
-        tMax: Double,
-        tMin: Double,
-        humidity: Double,
-        j: Int,
-        lat: Double,
-        ratio: Double,
-        pressure: Double,
-        U: Double
-    ): Double {
-        return (0.408 * delta(tMax, tMin) * (Rn(tMax, tMin, humidity, j, lat, ratio) - G()) + Y(pressure)
-                * (900 / (Tmean(tMax, tMin) + 273)) * U * (es(tMax, tMin) - ea(humidity, tMax, tMin))) / (delta(
-            tMax,
-            tMin
-        ) + Y(pressure) * (1 + 0.34 * U))
+    fun Eto(tMax: Double, tMin: Double, humidity: Double, j: Int, lat: Double, ratio: Double, pressure: Double, U: Double): Double {
+        return ((0.408 * delta(tMax, tMin) * (Rn(tMax, tMin, humidity, j, lat, ratio) - G()) + Y(pressure) * (900 / (Tmean(tMax, tMin) + 273)) * U * (es(tMax, tMin) - ea(humidity, tMax, tMin))) / (delta(tMax, tMin) + Y(pressure) * (1 + 0.34 * U)))
     }
 
     fun Kcprev(stage: String): Double {
@@ -631,44 +638,11 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
         }
     }
 
-    fun Etc(
-        tMax: Double,
-        tMin: Double,
-        humidity: Double,
-        j: Int,
-        lat: Double,
-        ratio: Double,
-        pressure: Double,
-        U: Double,
-        lPlant: LPlant,
-        kcPlant: KcPlant
-    ) =
+    fun Etc(tMax: Double, tMin: Double, humidity: Double, j: Int, lat: Double, ratio: Double, pressure: Double, U: Double, lPlant: LPlant, kcPlant: KcPlant) =
         (Eto(tMax, tMin, humidity, j, lat, ratio, pressure, U) * Kc(lPlant, kcPlant, j)) * lPlant.count
 
-    fun time(
-        tMax: Double,
-        tMin: Double,
-        humidity: Double,
-        j: Int,
-        lat: Double,
-        ratio: Double,
-        pressure: Double,
-        U: Double,
-        lPlant: LPlant,
-        kcPlant: KcPlant
-    ) =
-        (Etc(
-            tMax,
-            tMin,
-            humidity,
-            j,
-            lat,
-            ratio,
-            pressure,
-            U,
-            lPlant,
-            kcPlant
-        ) * lPlant.count * 1000000) / lPlant.flow // flow rate
+    fun time(tMax: Double, tMin: Double, humidity: Double, j: Int, lat: Double, ratio: Double, pressure: Double, U: Double, lPlant: LPlant, kcPlant: KcPlant) =
+        (Etc(tMax, tMin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant) * (1000000) / lPlant.flow) // flow rate
 
     override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}
     override fun onProviderEnabled(provider: String?) {}

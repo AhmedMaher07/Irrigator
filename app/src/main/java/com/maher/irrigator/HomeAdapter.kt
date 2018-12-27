@@ -56,7 +56,7 @@ class HomeAdapter(context: Context?) : EmptyBaseAdapter<L>(context) {
         private val reset: Button = itemView.findViewById(R.id.reset)
         private val proceed: Button = itemView.findViewById(R.id.proceed)
         private val calendar = Calendar.getInstance()
-        private val dateFormat = SimpleDateFormat("dd-MM-yyyy")
+        private val dateFormat = SimpleDateFormat("dd - MM -yyyy")
 
         private var adapter = SpinnerAdapter()
 
@@ -140,25 +140,15 @@ class HomeAdapter(context: Context?) : EmptyBaseAdapter<L>(context) {
         val datePickerDialog = DatePickerDialog(
             context, R.style.DatePickerDialogTheme,
             DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
-                val newDate = Calendar.getInstance()
-                newDate.set(year, monthOfYear, dayOfMonth)
-                date.setText(dateFormat.format(newDate.time))
+                calendar.set(year, monthOfYear, dayOfMonth)
+                date.setText(dateFormat.format(calendar.time))
 
             }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)
         )
         datePickerDialog.show()
     }
 
-    private fun proceed(
-        context: Context?,
-        flow: EditText,
-        count: EditText,
-        spinnerTextView: SpinnerTextView<LPlant>,
-        lTag: String,
-        kcTag: String,
-        calendar: Calendar,
-        position: Int
-    ) {
+    private fun proceed(context: Context?, flow: EditText, count: EditText, spinnerTextView: SpinnerTextView<LPlant>, lTag: String, kcTag: String, calendar: Calendar, position: Int) {
         if (spinnerTextView.getSelectedItem() != null) {
             with(spinnerTextView.getSelectedItem()) {
                 this?.let {
