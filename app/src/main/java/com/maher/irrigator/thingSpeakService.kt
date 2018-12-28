@@ -3,7 +3,6 @@ package com.maher.irrigator
 import com.maher.irrigator.model.Latitude
 import com.maher.irrigator.model.Longitude
 import com.maher.irrigator.model.Moisture
-import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

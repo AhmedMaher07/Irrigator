@@ -152,7 +152,7 @@ class HomeAdapter(context: Context?) : EmptyBaseAdapter<L>(context) {
             with(spinnerTextView.getSelectedItem()) {
                 this?.let {
                     if (spinnerTextView.isEnabled && count.length() > 0 && flow.length() > 0) {
-                        SavedData.saveDataObject(context, LPlant(it.dev, it.init, it.late, it.mid, this.name, count.text.toString().toInt(), calendar.get(Calendar.DAY_OF_YEAR), flow.text.toString().toInt()), lTag)
+                        SavedData.saveDataObject(context, LPlant(it.dev, it.init, it.late, it.mid, this.name, count.text.toString().toInt(), calendar.get(Calendar.DAY_OF_YEAR), flow.text.toString().toDouble()), lTag)
                         with(kcData?.plants?.get(position)) {
                             this?.let {
                                 SavedData.saveDataObject(context, KcPlant(it.end, it.ini, it.mid, it.name), kcTag)
