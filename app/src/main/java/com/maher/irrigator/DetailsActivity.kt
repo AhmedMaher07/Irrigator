@@ -420,14 +420,14 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
                                             Handler().postDelayed({
                                                 if (!isFinishing)
                                                     call.clone().enqueue(this)
-                                            }, 10000)
+                                            }, 5000)
                                         }
                                     } else {
                                         Toast.makeText(this@DetailsActivity, "Waiting for Soil Moisture's update", Toast.LENGTH_SHORT).show()
                                         Handler().postDelayed({
                                             if (!isFinishing)
                                                 call.clone().enqueue(this)
-                                        }, 10000)
+                                        }, 5000)
                                     }
                                 }
 
@@ -442,13 +442,13 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
                         Handler().postDelayed({
                             if (!isFinishing)
                                 call.clone().enqueue(this)
-                        }, 10000)
+                        }, 5000)
                     }
                 } else {
                     Handler().postDelayed({
                         if (!isFinishing)
                             call.clone().enqueue(this)
-                    }, 10000)
+                    }, 5000)
                 }
             }
 
@@ -490,12 +490,12 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
                         Toast.makeText(this@DetailsActivity, "Waiting for Soil Moisture's update", Toast.LENGTH_SHORT).show()
                         Handler().postDelayed({
                             call.clone().enqueue(this)
-                        }, 10000)
+                        }, 5000)
                     }
                 } else {
                     Handler().postDelayed({
                         call.clone().enqueue(this)
-                    }, 10000)
+                    }, 5000)
                 }
             }
 
@@ -504,7 +504,7 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
                     Toast.makeText(this@DetailsActivity, "Waiting for Soil Moisture's update", Toast.LENGTH_SHORT).show()
                     Handler().postDelayed({
                         call.clone().enqueue(this)
-                    }, 10000)
+                    }, 5000)
                 }
             }
         })
@@ -639,7 +639,7 @@ class DetailsActivity : AppCompatActivity(), LocationListener {
         (Eto(tMax, tMin, humidity, j, lat, ratio, pressure, U) * Kc(lPlant, kcPlant, j) * lPlant.count)
 
     fun EtcMillion(tMax: Double, tMin: Double, humidity: Double, j: Int, lat: Double, ratio: Double, pressure: Double, U: Double, lPlant: LPlant, kcPlant: KcPlant) =
-        (Eto(tMax, tMin, humidity, j, lat, ratio, pressure, U) * Kc(lPlant, kcPlant, j) * lPlant.count).div(1000000)
+        (Eto(tMax, tMin, humidity, j, lat, ratio, pressure, U) * Kc(lPlant, kcPlant, j) * lPlant.count).div(500000)
 
     fun time(tMax: Double, tMin: Double, humidity: Double, j: Int, lat: Double, ratio: Double, pressure: Double, U: Double, lPlant: LPlant, kcPlant: KcPlant): Double {
         return Etc(tMax, tMin, humidity, j, lat, ratio, pressure, U, lPlant, kcPlant) * (lPlant.flow / 3600.0) // flow rate
