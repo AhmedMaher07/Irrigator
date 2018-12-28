@@ -18,15 +18,15 @@ internal interface thingSpeakService {
     fun getLongitude(@Path("channel_id") id: String, @Query("api_key") key: String): Call<Longitude>
 
     @GET("update")
-    fun setProbability(@Query("api_key") key: String, @Query("field5") field: Int): Call<ResponseBody>
+    fun setProbability(@Query("api_key") key: String, @Query("field5") field: Int): Call<Int>
 
     @GET("channels/{channel_id}/fields/3/last.json")
     fun getMoisture(@Path("channel_id") id: String, @Query("api_key") key: String): Call<Moisture>
 
     @GET("update")
-    fun setTime(@Query("api_key") key: String, @Query("field4") field: Int): Call<ResponseBody>
+    fun setTime(@Query("api_key") key: String, @Query("field4") field: String): Call<Int>
 
     @GET("update")
-    fun setOperation(@Query("api_key") key: String, @Query("field6") field: Int): Call<ResponseBody>
+    fun setOperation(@Query("api_key") key: String, @Query("field6") field: Int): Call<Int>
 
 }

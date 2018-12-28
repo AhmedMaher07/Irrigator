@@ -191,7 +191,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/TextStyle.Title.Bold"
-                    android:text="Water Needed = "
+                    tools:text="Water Needed = "
                     app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintTop_toBottomOf="@+id/lat_lng"
                     app:layout_constraintStart_toStartOf="parent"
@@ -211,6 +211,7 @@
                     android:layout_marginEnd="8dp"
                     app:layout_constraintStart_toEndOf="@+id/water_needed"
                     app:layout_constraintHorizontal_bias="0.5"/>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
