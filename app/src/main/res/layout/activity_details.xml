@@ -21,6 +21,7 @@
                 android:id="@+id/container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
             <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
@@ -213,10 +214,35 @@
                     app:layout_constraintHorizontal_bias="0.5"/>
 
 
+            <TextView
+                    android:id="@+id/water_unit_needed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title.Bold"
+                    tools:text="Water Needed per plant = "
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintTop_toBottomOf="@+id/water_needed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toStartOf="@+id/water_unit_needed_value"
+                    android:layout_marginTop="16dp"/>
+            <TextView
+                    android:id="@+id/water_unit_needed_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Title.Bold"
+                    tools:text="Water Value"
+                    app:layout_constraintTop_toTopOf="@+id/water_unit_needed"
+                    app:layout_constraintBottom_toBottomOf="@+id/water_unit_needed"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/water_unit_needed"
+                    app:layout_constraintHorizontal_bias="0.5"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
-
 
     <include layout="@layout/progress_view"/>
 

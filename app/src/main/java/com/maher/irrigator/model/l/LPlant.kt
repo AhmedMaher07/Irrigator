@@ -6,7 +6,7 @@ data class LPlant(
     val late: Double,
     val mid: Double,
     val name: String,
-    val count: Int,
+    val count: Double,
     val date: Int,
     val flow: Double
 )
